@@ -1,0 +1,265 @@
+name: "Add Personas and Roles to Project Management Documentation"
+description: "Request to expand and enhance the defined personas and roles in OctoAcme project management framework."
+title: "[Process Doc Update]: Adding more personas and roles to the project management processes"
+labels: ["documentation", "process improvement"]
+body:
+  - type: dropdown
+    id: process_doc
+    attributes:
+      label: "Which process document do you want to update?"
+      description: "Select the program management process document you want to add content to."
+      options:
+        - octoacme-project-management-overview.md
+        - octoacme-project-initiation.md
+        - octoacme-project-planning.md
+        - octoacme-execution-and-tracking.md
+        - octoacme-risks-and-communication.md
+        - octoacme-release-and-deployment.md
+        - octoacme-retrospective-and-continuous-improvement.md
+        - octoacme-roles-and-personas.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: content_summary
+    attributes:
+      label: "Summary of New Content"
+      description: "Briefly describe the new content or update you want to add."
+      value: |
+        Expand the OctoAcme roles and personas documentation to include additional stakeholders and contributors referenced throughout the project management process documents but not yet formally defined.
+        
+        Current defined personas: Developers, Product Managers, Project Managers
+        
+        Proposed new personas to document:
+        1. **QA/Testing Specialist** - Validates quality and acceptance criteria
+        2. **Technical Lead/Architect** - Provides technical guidance and design oversight
+        3. **Stakeholder/Sponsor** - Provides inputs, approvals, and business context
+        4. **Product Lead** - Oversees product strategy and cross-project alignment
+        5. **Scrum Master/Agile Coach** (optional) - Facilitates ceremonies and team processes
+        6. **Security/Compliance Officer** - Ensures security and compliance requirements
+        7. **DevOps/Release Engineer** - Manages deployment pipelines and infrastructure
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Why is this update needed?"
+      description: "Explain the reason for this addition."
+      value: |
+        **Identified Gaps:**
+        - The current roles documentation mentions QA/Testing, Product Lead, Sponsor, and other roles in process documents but doesn't formally define them with clear responsibilities
+        - References to "on-call" personnel, security incident handling, and deployment workflows exist but lack clarity on role accountability
+        - New team members cannot easily understand the full organizational structure and cross-functional dependencies
+        
+        **Benefits of Enhancement:**
+        - Improves onboarding clarity by defining all stakeholders involved in OctoAcme projects
+        - Reduces ambiguity about who owns specific decisions and activities (e.g., security scanning, deployment approvals)
+        - Strengthens accountability by clearly mapping responsibilities
+        - Enhances cross-functional collaboration by helping each persona understand how they interact with others
+        - Provides templates for teams to adapt personas to their specific context
+        - Supports consistent project execution across multiple teams
+    validations:
+      required: true
+
+  - type: textarea
+    id: example_content
+    attributes:
+      label: "Suggested Content"
+      description: "Proposed new sections to add to octoacme-roles-and-personas.md"
+      value: |
+        ## QA/Testing Specialist
+        
+        ### Role Summary
+        QA and Testing Specialists ensure that delivered features meet acceptance criteria, quality standards, and regulatory requirements. They collaborate with developers and product teams to design test strategies and validate releases.
+        
+        ### Responsibilities
+        - Design and execute test plans (unit, integration, end-to-end)
+        - Validate acceptance criteria before features move to production
+        - Identify and document defects with clear reproduction steps
+        - Participate in release readiness reviews
+        - Monitor post-deployment quality metrics
+        - Contribute to test automation strategy and infrastructure
+        
+        ### Goals
+        - Ensure high-quality releases with minimal production defects
+        - Enable fast feedback cycles through effective test automation
+        - Build confidence in release quality across stakeholders
+        
+        ### Typical Communication
+        - Sprint planning and acceptance criteria reviews
+        - Defect reports and quality metrics dashboards
+        - Release readiness sign-offs
+        - Test automation retrospectives
+        
+        ### Interactions with Other Roles
+        - **Developers**: Review code changes, provide test cases, validate fixes
+        - **Product Managers**: Clarify acceptance criteria, validate user scenarios
+        - **Project Managers**: Report on quality risks, contribute to release readiness assessments
+        
+        ---
+        
+        ## Technical Lead / Architect
+        
+        ### Role Summary
+        Technical Leads provide architectural guidance, design oversight, and technical decision-making for complex projects. They ensure solutions are scalable, maintainable, and aligned with technical strategy.
+        
+        ### Responsibilities
+        - Review and approve technical designs and architecture decisions
+        - Identify and mitigate technical risks
+        - Guide code quality standards and best practices
+        - Mentor developers and foster technical excellence
+        - Participate in capacity planning and effort estimation
+        - Resolve cross-team technical dependencies
+        
+        ### Goals
+        - Enable sustainable, scalable technical solutions
+        - Build team technical capability and knowledge
+        - Minimize technical debt and rework
+        
+        ### Typical Communication
+        - Technical design reviews and architecture discussions
+        - Code reviews and technical guidance
+        - Risk assessments and mitigation planning
+        - Cross-team technical sync meetings
+        
+        ### Interactions with Other Roles
+        - **Developers**: Provide technical guidance, review designs, mentor growth
+        - **Project Managers**: Help assess technical risks and feasibility
+        - **Product Managers**: Advise on technical trade-offs and implementation approaches
+        
+        ---
+        
+        ## Stakeholder / Sponsor
+        
+        ### Role Summary
+        Stakeholders and Sponsors provide business context, prioritization, resources, and approvals for projects. They represent customer needs, business objectives, and organizational priorities.
+        
+        ### Responsibilities
+        - Define business objectives and success criteria
+        - Provide or secure necessary resources and budget
+        - Approve major project decisions and scope changes
+        - Escalate blockers and remove barriers
+        - Communicate project status to broader organization
+        - Represent customer or business interests
+        
+        ### Goals
+        - Ensure projects deliver measurable business value
+        - Maximize ROI and alignment with organizational strategy
+        - Remove obstacles to team success
+        
+        ### Typical Communication
+        - Monthly status updates and business reviews
+        - Decision and approval meetings
+        - Risk escalations and dependency coordination
+        - Stakeholder announcements and announcements
+        
+        ### Interactions with Other Roles
+        - **Product Managers**: Align on business objectives and prioritization
+        - **Project Managers**: Receive status updates, provide approvals, escalate issues
+        - **Developers**: Understand business context during design and planning
+        
+        ---
+        
+        ## Product Lead
+        
+        ### Role Summary
+        Product Leads oversee product strategy, cross-project alignment, and long-term product vision. They coordinate multiple Product Managers and ensure coherent product direction.
+        
+        ### Responsibilities
+        - Define product vision and long-term strategy
+        - Coordinate prioritization across multiple product managers
+        - Escalate risks and dependencies across projects
+        - Approve major product decisions and trade-offs
+        - Ensure alignment with organizational roadmap
+        - Mentor product managers and promote product excellence
+        
+        ### Goals
+        - Deliver cohesive product experience across initiatives
+        - Maximize alignment between product, engineering, and business
+        - Scale product decision-making across teams
+        
+        ### Typical Communication
+        - Weekly alignment with Product Managers
+        - Executive business reviews
+        - Cross-team dependency and risk escalations
+        - Product strategy and roadmap discussions
+        
+        ### Interactions with Other Roles
+        - **Product Managers**: Escalate to for major prioritization conflicts and strategy alignment
+        - **Project Managers**: Receive escalations for cross-project dependencies
+        - **Stakeholders/Sponsors**: Align on product strategy and business objectives
+        
+        ---
+        
+        ## DevOps / Release Engineer
+        
+        ### Role Summary
+        DevOps and Release Engineers manage deployment pipelines, infrastructure, and release processes. They enable fast, reliable, and safe deployments to production.
+        
+        ### Responsibilities
+        - Configure and maintain CI/CD pipelines
+        - Manage deployment infrastructure and environments
+        - Execute production deployments and rollbacks
+        - Monitor deployment health and post-deploy metrics
+        - Automate repetitive deployment tasks
+        - Document runbooks and incident response procedures
+        - Coordinate deployment windows and maintenance
+        
+        ### Goals
+        - Enable fast, reliable deployments with minimal risk
+        - Reduce manual work and human error in release processes
+        - Maintain high system uptime and performance
+        
+        ### Typical Communication
+        - Release planning and go/no-go decisions
+        - Deployment status updates and incident response
+        - Infrastructure and pipeline improvements
+        - On-call escalations and incident coordination
+        
+        ### Interactions with Other Roles
+        - **Project Managers**: Coordinate deployment windows, provide release readiness sign-offs
+        - **Developers**: Assist with debugging production issues, work on deployment automation
+        - **QA/Testing**: Coordinate staging environment testing and smoke test execution
+        
+        ---
+        
+        ## Security / Compliance Officer
+        
+        ### Role Summary
+        Security and Compliance Officers ensure that projects meet security standards, regulatory requirements, and organizational policies. They advise on risk mitigation and secure development practices.
+        
+        ### Responsibilities
+        - Review security and compliance requirements for projects
+        - Conduct or oversee security assessments and scanning
+        - Advise on secure design and implementation practices
+        - Manage security incident response
+        - Track compliance with standards and regulations
+        - Participate in risk assessments and mitigation planning
+        
+        ### Goals
+        - Protect organizational and customer data
+        - Ensure compliance with regulatory requirements
+        - Build security into development processes
+        
+        ### Typical Communication
+        - Security review meetings and design assessments
+        - Compliance audit participation
+        - Incident response and triage
+        - Risk registers and mitigation planning
+        
+        ### Interactions with Other Roles
+        - **Developers**: Provide security guidance, review designs, escalate vulnerabilities
+        - **Project Managers**: Advise on security risks and compliance requirements
+        - **DevOps/Release Engineers**: Ensure security controls in deployment pipelines
+
+  - type: checkboxes
+    id: acceptance_criteria
+    attributes:
+      label: "Acceptance Criteria"
+      description: "Ensure the following when completing this update:"
+      options:
+        - label: "All new personas include role summary, responsibilities, goals, communication channels, and interactions with other roles"
+        - label: "New personas are cross-referenced in other OctoAcme process documents where relevant (e.g., QA in Execution & Tracking, Security in Release & Deployment)"
+        - label: "Content aligns with existing process docs and uses consistent terminology"
+        - label: "Update improves clarity on cross-functional dependencies and accountability"
